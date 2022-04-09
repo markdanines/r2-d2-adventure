@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/markdanines/rd-d2-adventure/issues"
   },
-  "homepage": "https://github.com/markdanines/rd-d2-adventure#readme"
+  "homepage": "https://github.com/markdanines/rd-d2-adventure#readme",
+  "dependencies": {
+    "is-number": "^7.0.0",
+    "prompt-sync": "^4.2.0"
+  }
 }
