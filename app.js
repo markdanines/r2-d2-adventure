@@ -5,8 +5,6 @@ const Game = require('./GameLogic/Game');
 // Create the game 
 const myGame = new Game();
 
-console.log(`TO START THE GAME TYPE 'LAND'`)
-
 while(!myGame.gameOver) {
     const command = prompt("> ").trim();
     if (command === 'LAND' && !myGame.coordinatesAssigned()) {

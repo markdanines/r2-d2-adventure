@@ -19,26 +19,19 @@ class Game {
     r2d2Coords = [];
     obiWanKenobiCoords = [];
 
+    // Initializes game
     initializeGame() {
-        this.createTatooineGrid();
         this.assignRandomCoordinates();
         this.assignRandomDirection();
     }
 
-    createTatooineGrid() {
-        // Multidimensional array that illustrates tatooine
-        let x = new Array(100);
-        for (let i = 0; i < x.length; i++) {
-            x[i] = new Array(100);
-        }
-    }
-
+    // Checks if coordinates have been assigned to r2d2 and obiWanKenobi
     coordinatesAssigned() {
         return this.r2d2Coords.length === 2 && this.obiWanKenobiCoords.length === 2;
     }
 
+    // Assigns random coordinates to r2d2 and obiWanKenobi
     assignRandomCoordinates() {
-        // Preliminary coords
         const r2d2 = this.generateCoordinates();
         const obiWanKenobi = this.generateCoordinates();
 
@@ -52,6 +45,7 @@ class Game {
         this.obiWanKenobiCoords = obiWanKenobi;
     }
 
+    // Assigns random facing direction
     assignRandomDirection() {
         const direction = this.getRandomNumbersFromRange(4);
         switch(direction) {
