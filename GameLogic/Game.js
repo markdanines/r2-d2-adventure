@@ -1,10 +1,5 @@
 const LoggerService = require('./LoggerService');
 
-const GameObject = {
-    R2_D2: "R2-D2",
-    OBI_WAN_KENOBI: "Obi Wan Kenobi"
-}
-
 const Direction = {
     NORTH: 'North',
     SOUTH: 'South',
@@ -74,11 +69,13 @@ class Game {
         return Math.floor(Math.random() * range);
     }
 
+    // LAND command handler
     land() {
         this.initializeGame();
         this.report();
     }
 
+    // MOVE command handler
     move(numSpaces) {
         switch(this.facingDirection) {
             case Direction.NORTH:
@@ -107,6 +104,7 @@ class Game {
         this.checkIfWon();
     }
 
+    // Checks if r2d2 coords has the same values as obiWanKenobi
     checkIfWon() {
         if(this.r2d2Coords[0] === this.obiWanKenobiCoords[0] && this.r2d2Coords[1] === this.obiWanKenobiCoords[1]) {
             LoggerService.logCongratulations();
@@ -114,11 +112,13 @@ class Game {
         }
     }
 
+    // REPORT command handler
     report() {
         LoggerService.logInformation(this.r2d2Coords[0], this.r2d2Coords[1], this.facingDirection)
         LoggerService.logInformation(this.obiWanKenobiCoords[0], this.obiWanKenobiCoords[1])
     }
 
+    // RIGHT command handler
     right() {
         switch(this.facingDirection) {
             case Direction.NORTH:

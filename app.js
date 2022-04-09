@@ -5,6 +5,7 @@ const Game = require('./GameLogic/Game');
 // Create the game 
 const myGame = new Game();
 
+// This is the main game loop
 while(!myGame.gameOver) {
     const command = prompt("> ").trim();
     if (command === 'LAND' && !myGame.coordinatesAssigned()) {
@@ -18,6 +19,7 @@ while(!myGame.gameOver) {
     }
 };
 
+// Checks if the MOVE command has the valid format
 function validMoveCommand(userCommand) {
     let valid = true;
 
