@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/markdanines/rd-d2-adventure#readme",
   "dependencies": {
-    "is-number": "^7.0.0",
-    "prompt-sync": "^4.2.0"
+    "prompt-sync": "^4.2.0",
+    "validator": "^13.7.0"
   }
 }

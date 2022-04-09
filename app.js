@@ -1,5 +1,5 @@
 const prompt = require("prompt-sync")({ sigint: true });
-const isNumber = require('is-number');
+const validator = require('validator');
 const Game = require('./GameLogic/Game');
 
 // Create the game 
@@ -34,7 +34,7 @@ function validMoveCommand(userCommand) {
     }
 
     // Check if element 2 can be converted to an int
-    if(!isNumber(moveCommandStrings[1])) {
+    if(moveCommandStrings.length === 2 && !validator.isNumeric(moveCommandStrings[1])) {
         valid = false;
     }
 
